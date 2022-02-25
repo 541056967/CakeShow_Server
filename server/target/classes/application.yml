@@ -20,7 +20,18 @@ spring:
 
 # Mybatis-plus配置
 mybatis-plus:
-  mapper-location: com.wonderland.server.mapper/*Mapper.xml
+  mapper-location: classpath*:/mapper/*Mapper.xml
   type-aliases-package: com.wonderland.sserver.pojo
   configuration:
     map-underscore-to-camel-case: false
+
+jwt:
+  # JWT存储的请求头
+  tokenHeader: Authorization
+  # JWT 加解密使用的密钥
+  secret: cakeShow-secret
+  # JWT的超期限时间（60*60*24）
+  expiration: 604800L
+  # JWT 负载中拿到开头
+  tokenHead: Bearer
+
